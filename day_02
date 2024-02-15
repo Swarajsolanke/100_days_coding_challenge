@@ -1,0 +1,55 @@
+# 1. Palindrome String: (geeks for geeks source)
+Given a string S, check if it is palindrome or not.
+
+Example 1:
+
+Input: S = "abba"
+Output: 1
+Explanation: S is a palindrome
+Example 2:
+
+Input: S = "abc" 
+Output: 0
+Explanation: S is not a palindrome
+code:
+class Solution:
+	def isPalindrome(self, S):
+	    tem=S[::-1]  # revesre the string first then compare with the original one 
+	    if tem==S:
+	        return 1
+	    else:
+	        return 0
+
+# 2.Reverse array in groups:
+Given an array arr[] of positive integers of size N. Reverse every sub-array group of size K.
+
+Note: If at any instance, there are no more subarrays of size greater than or equal to K, then reverse the last subarray (irrespective of its size). You shouldn't return any array, modify the given array in-place.
+
+Example 1:
+
+Input:
+N = 5, K = 3
+arr[] = {1,2,3,4,5}
+Output: 3 2 1 5 4
+Explanation: First group consists of elements
+1, 2, 3. Second group consists of 4,5.
+ 
+
+Example 2:
+
+Input:
+N = 4, K = 3
+arr[] = {5,6,8,9}
+Output: 8 6 5 9
+code:
+class Solution:	
+    #Function to reverse every sub-array group of size k.
+	def reverseInGroups(self, arr, N, K):
+	    for i in range(0,N,K): #first itreate through size of array and K value 
+	        p=i                # store first index into p
+	        k=min(i+K-1,N-1)   # find the min value using this formula 
+	        while p<k:# as long as p is less than k swap the first with second element 
+	            arr[p],arr[k]=arr[k],arr[p]
+	            p+=1
+	            k-=1
+	  
