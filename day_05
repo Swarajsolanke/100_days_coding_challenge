@@ -1,0 +1,67 @@
+1.Kth smallest element
+Given an array arr[] and an integer K where K is smaller than size of array, the task is to find the Kth smallest element in the given array. It is given that all array elements are distinct.
+Note :-  l and r denotes the starting and ending index of the array.
+Example 1:
+Input:
+N = 6
+arr[] = 7 10 4 3 20 15
+K = 3
+L=0 R=5
+Output : 7
+Explanation :
+3rd smallest element in the given 
+array is 7.
+Example 2:
+Input:
+N = 5
+arr[] = 7 10 4 20 15
+K = 4 L=0 R=4
+Output : 15
+Explanation :
+4th smallest element in the given 
+array is 15.
+  
+code :
+  class Solution:
+    def kthSmallest(self,arr, l, r, k):
+        arr.sort() # sorted the given arr 
+        return arr[k-1] # played with the index value 
+          
+2.Union of two arrays
+Given two arrays a[] and b[] of size n and m respectively. The task is to find the number of elements in the union between these two arrays.
+Union of the two arrays can be defined as the set containing distinct elements from both the arrays. If there are repetitions, then only one occurrence of element should be printed in the union.
+Note : Elements are not necessarily distinct.
+Example 1:
+Input:
+5 3
+1 2 3 4 5
+1 2 3
+Output: 
+5
+Explanation: 
+1, 2, 3, 4 and 5 are the
+elements which comes in the union set
+of both arrays. So count is 5.
+Example 2:
+Input:
+6 2 
+85 25 1 32 54 6
+85 2 
+Output: 
+7
+Explanation: 
+85, 25, 1, 32, 54, 6, and
+2 are the elements which comes in the
+union set of both arrays. So count is 7.
+  
+code:
+  class Solution:    
+   
+    def doUnion(self,a,n,b,m):
+        s=set() # set only hold distinct number 
+        for i in a:
+            s.add(i) # iterating and adding into set 
+        for j in b:
+            s.add(j)
+        return len(s) # calculated  the length or counts of two arrays union set
+    
