@@ -1,0 +1,56 @@
+1.73. Set Matrix Zeroes
+Given an m x n integer matrix matrix, if an element is 0, set its entire row and column to 0's.
+You must do it in place.
+Input: matrix = [[1,1,1],[1,0,1],[1,1,1]]
+Output: [[1,0,1],[0,0,0],[1,0,1]]
+
+code:
+   class Solution:
+    def setZeroes(self, matrix: List[List[int]]) -> None:
+        p,q=len(matrix),len(matrix[0])
+        r,c=[1]*p ,[1]*q
+        for i in range(p): #this is for single row and column 
+            for j in range (q):
+                if matrix[i][j]==0:
+                    r[i]=0
+                    c[j]=0
+        #only for number rows 
+        for i in range(p):
+            if r[i]==0:
+                matrix[i]=[0]*q
+        # only for number of columns 
+        for j in range(q):
+            if c[j]==0:
+                for i in range(p):
+                    matrix[i][j]=0
+                    
+                
+2.Reverse words in a given string
+Given a String S, reverse the string without reversing its individual words. Words are separated by dots.
+Example 1:
+Input:
+S = i.like.this.program.very.much
+Output: much.very.program.this.like.i
+Explanation: After reversing the whole
+string(not individual words), the input
+string becomes
+much.very.program.this.like.i
+Example 2:
+Input:
+S = pqr.mno
+Output: mno.pqr
+Explanation: After reversing the whole
+string , the input string becomes
+mno.pqr.
+
+code:
+class Solution:
+    #Function to reverse words in a given string.
+    def reverseWords(self,S):
+        S=S.split(".") # here i first splited the individul words by .  
+        return ".".join(S[::-1]) # then reverse it and join again by .
+        
+
+
+ 
+
